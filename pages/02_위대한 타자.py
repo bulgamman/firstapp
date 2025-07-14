@@ -1,7 +1,7 @@
 import streamlit as st
-import pandas as pd  # pandas는 Streamlit Cloud 기본 내장입니다.
+import pandas as pd
 
-# 타자 데이터
+# 데이터
 players = [
     "마이크 트라웃",
     "후안 소토",
@@ -23,14 +23,16 @@ df = pd.DataFrame({
     "wRC+": wrc_plus
 })
 
-# 제목
+# 인덱스 설정
+df.set_index("선수", inplace=True)
+
+# 제목 및 설명
 st.title("2010년 이후 MLB 최고의 타자 (wRC+ 기준)")
 
-# 설명
 st.markdown("""
-- **wRC+**는 타자의 공격 기여도를 측정하는 지표입니다.  
-- 리그 평균은 **100**, 수치가 높을수록 뛰어난 타자입니다.
+- **wRC+**는 타자의 공격 기여도를 나타내는 대표적인 지표입니다.
+- 평균은 100, 수치가 높을수록 더 좋은 성적을 의미합니다.
 """)
 
-# 인덱스를 선수 이름으로 설정
-d
+# 그래프 출력
+st.bar_chart(df)
