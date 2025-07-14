@@ -1,13 +1,38 @@
 import streamlit as st
 
-# 대륙별 돼지고기 튀김 요리를 즐기는 나라들 (예시 기반 데이터)
+# 대륙별 돼지고기 튀김 요리를 즐기는 나라들 (요리 이름을 한글로 번역)
 continent_pork_fry = {
-    "아시아": ["대한민국 (삼겹살튀김, 돈가스)", "필리핀 (Lechon Kawali)", "중국 (Sweet and Sour Pork)", "태국 (Moo Tod)", "베트남 (Thịt Chiên)"],
-    "유럽": ["독일 (Schnitzel)", "오스트리아 (Wiener Schnitzel)", "폴란드 (Kotlet Schabowy)", "스페인 (Torreznos)"],
-    "북아메리카": ["미국 (Deep-fried pork chops)", "멕시코 (Chicharrón)", "캐나다 (Deep-fried bacon)"],
-    "남아메리카": ["브라질 (Torresmo)", "콜롬비아 (Chicharrón Colombiano)", "페루 (Chicharrón de cerdo)"],
-    "아프리카": ["남아프리카공화국 (Deep-fried pork belly)", "나이지리아 (Pork stir fry – 일부 지역)"],
-    "오세아니아": ["호주 (Deep-fried pork schnitzel)", "뉴질랜드 (Pork belly bites – 일부 식당 메뉴)"]
+    "아시아": [
+        "대한민국 (삼겹살 튀김, 돈가스)",
+        "필리핀 (레촌 카왈리 - 바삭한 돼지고기 튀김)",
+        "중국 (탕수육)",
+        "태국 (무 톳 - 튀긴 돼지고기)",
+        "베트남 (튀긴 돼지고기 - 띳 찌엔)"
+    ],
+    "유럽": [
+        "독일 (슈니첼 - 돼지고기 커틀릿)",
+        "오스트리아 (비너 슈니첼 - 빈식 돈가스)",
+        "폴란드 (슈하보비 커틀릿 - 튀긴 돼지등심)",
+        "스페인 (토레즈노스 - 바삭한 돼지껍질)"
+    ],
+    "북아메리카": [
+        "미국 (튀긴 돼지고기 커틀릿)",
+        "멕시코 (치차론 - 돼지고기 튀김)",
+        "캐나다 (튀긴 베이컨)"
+    ],
+    "남아메리카": [
+        "브라질 (토헤스무 - 바삭한 돼지껍질)",
+        "콜롬비아 (콜롬비아식 치차론 - 바삭한 삼겹살)",
+        "페루 (페루식 돼지고기 튀김 - 치차론 데 세르도)"
+    ],
+    "아프리카": [
+        "남아프리카공화국 (튀긴 삼겹살)",
+        "나이지리아 (돼지고기 볶음 튀김 - 일부 지역)"
+    ],
+    "오세아니아": [
+        "호주 (돼지고기 슈니첼 - 튀김 커틀릿)",
+        "뉴질랜드 (돼지고기 바이트 튀김 - 일부 식당 메뉴)"
+    ]
 }
 
 # 웹앱 제목
@@ -21,4 +46,3 @@ if continent:
     st.subheader(f"{continent}에서 돼지를 기름에 튀겨 먹는 나라들:")
     for country in continent_pork_fry[continent]:
         st.markdown(f"- {country}")
-
